@@ -1,0 +1,62 @@
+#overlay {
+    position: relative;
+    display: inline-block;
+}
+
+#health_and_timer {
+    position: absolute; 
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+
+#player_health {
+    height: 30px;
+    width: 100%;
+    background-color: red;
+}
+
+#player_health_decreasing{
+    position: absolute; 
+    background-color: green; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    width: 100%;
+}
+
+#timer {
+    height: 100px;
+    width: 100px;
+    flex-shrink: 0;
+    background-color: yellow;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#enemy_health {
+    height: 30px;
+    background-color: red;
+}
+#enemy_health_decreasing {
+    position: absolute; 
+    background-color: green; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    left: 0;
+}
+
+#Tie{
+    position: absolute;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+}

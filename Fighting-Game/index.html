@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        *{
+           box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay">
+        <div id="health_and_timer">
+            <!-- player health-->
+            <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content: flex-end">
+                <div id="player_health"></div>
+                <div id="player_health_decreasing"></div>
+            </div>
+            <!-- timer-->
+            <div id="timer">
+                60
+            </div>
+            <!-- enemy health-->
+            <div style="position: relative; height: 30px; width: 100%">
+                <div id="enemy_health"></div>
+                <div id="enemy_health_decreasing"></div>
+            </div>
+        </div>
+        <div id="tie">Tie</div>
+        <canvas></canvas>
+    </div>
+    <script src="classi.js"></script>
+    <script src="funzioni.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
