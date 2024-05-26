@@ -83,6 +83,8 @@ class Fighter extends Sprite {
         this.framesElapsed = 0
         this.framesHold = 20
         this.sprites = sprites
+        this.dead = false
+
         for( const sprite in this.sprites){
             sprites [sprite].image = new Image()
             sprites [sprite].image.src = sprites [sprite].imageSrc
@@ -91,8 +93,9 @@ class Fighter extends Sprite {
 
     update () {
         this.draw()
-        this.animateFrames()
-        console.log(player.position.x, player.position.y, enemy.attackBox.position.x,enemy.attackBox.position.y)
+        if(!this.dead) this.animateFrames()
+        
+
 
 
         //attackbox
@@ -115,11 +118,22 @@ class Fighter extends Sprite {
     }
 
     hit() {
-        this.switchSprite('hit')
         this.health -= 20
+
+        if (this.health <= 0) {
+            this.switchSprite('death')
+        } else this.switchSprite('hit')
     }
     
     switchSprite(sprite) {
+
+        if (this.image === this.sprites.death.image) {
+            if(this.framesCurrent === this.sprites.death.framesMax -1 )
+            this.dead = true
+            return
+        }
+               
+
         if (
             this.image === this.sprites.attack1.image && 
             this.framesCurrent < this.sprites.attack1.framesMax -1) 
@@ -171,6 +185,13 @@ class Fighter extends Sprite {
                 if(this.image !== this.sprites.hit.image) {
                     this.image = this.sprites.hit.image
                     this.framesMax = this.sprites.hit.framesMax
+                    this.framesCurrent = 0
+                }
+                break
+            case 'death':
+                if(this.image !== this.sprites.death.image) {
+                    this.image = this.sprites.death.image
+                    this.framesMax = this.sprites.death.framesMax
                     this.framesCurrent = 0
                 }
                 break

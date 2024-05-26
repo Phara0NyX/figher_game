@@ -81,6 +81,11 @@ const player = new Fighter({
             framesMax: 6,
             image: new Image()
         },
+        death: {
+            imageSrc: './Graphic/character/Assassin/Death.png',
+            framesMax: 9,
+            image: new Image()
+        }
     },
     attackBox: {
         offset: {
@@ -142,6 +147,11 @@ const enemy = new Fighter({
             framesMax: 5,
             image: new Image()
         },
+        death: {
+            imageSrc: './Graphic/character/NightBorne/Death.png',
+            framesMax: 23,
+            image: new Image()
+        }
     },
     attackBox: {
         offset: {
@@ -178,6 +188,9 @@ decreaseTimer()
 
 
 window.addEventListener('keydown', (event) => {
+    if(!player.dead) {
+
+    
     switch (event.key) {
 //player
         case 'd':
@@ -196,23 +209,28 @@ window.addEventListener('keydown', (event) => {
         case ' ':
             player.attack()
             break
-//enemy
-        case 'ArrowRight':
-            keys.ArrowRight.pressed = true 
-            enemy.lastKey = 'ArrowRight'
-            break
-        case 'ArrowLeft':
-            keys.ArrowLeft.pressed = true 
-            enemy.lastKey = 'ArrowLeft'
-            break
-        case 'ArrowUp':
-            if((enemy.position.y + enemy.height) >= canvas.height) {
-                enemy.velocity.y = -13
-            }
-            break
-        case 'ArrowDown':
-            enemy.attack()
-            break
+        }
+    }
+    if(!enemy.dead) {
+        switch(event.key){
+        //enemy
+            case 'ArrowRight':
+                keys.ArrowRight.pressed = true 
+                enemy.lastKey = 'ArrowRight'
+                break
+            case 'ArrowLeft':
+                keys.ArrowLeft.pressed = true 
+                enemy.lastKey = 'ArrowLeft'
+                break
+            case 'ArrowUp':
+                if((enemy.position.y + enemy.height) >= canvas.height) {
+                    enemy.velocity.y = -13
+                }
+                break
+            case 'ArrowDown':
+                enemy.attack()
+                break
+        }
     }
 
 })

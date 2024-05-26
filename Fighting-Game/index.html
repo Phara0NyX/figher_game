@@ -1,9 +1,13 @@
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
         *{
            box-sizing: border-box;
+            font-family: 'Press Start 2P', cursive;
         }
     </style>
 </head>
@@ -11,7 +15,14 @@
     <div id="overlay">
         <div id="health_and_timer">
             <!-- player health-->
-            <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content: flex-end">
+            <div style="position: relative; 
+            width: 100%; 
+            display: flex; 
+            justify-content: 
+            flex-end; 
+            border-top: 4px solid white;
+            border-left: 4px solid white;
+            border-bottom: 4px solid white;">
                 <div id="player_health"></div>
                 <div id="player_health_decreasing"></div>
             </div>
@@ -20,7 +31,11 @@
                 60
             </div>
             <!-- enemy health-->
-            <div style="position: relative; height: 30px; width: 100%">
+            <div style="position: relative; 
+            width: 100%;
+            border-top: 4px solid white;
+            border-right: 4px solid white;
+            border-bottom: 4px solid white;">
                 <div id="enemy_health"></div>
                 <div id="enemy_health_decreasing"></div>
             </div>

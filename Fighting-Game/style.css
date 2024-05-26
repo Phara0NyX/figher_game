@@ -1,3 +1,5 @@
+
+
 #overlay {
     position: relative;
     display: inline-block;
@@ -12,6 +14,7 @@
 }
 
 #player_health {
+    position: relative;
     height: 30px;
     width: 100%;
     background-color: red;
@@ -27,27 +30,29 @@
 }
 
 #timer {
-    height: 100px;
+    height: 50px;
     width: 100px;
     flex-shrink: 0;
-    background-color: yellow;
+    background-color: rgb(95, 95, 95);
     display:flex;
     align-items: center;
     justify-content: center;
+    border: 4px solid white;
+    color: white;
 }
 
 #enemy_health {
     height: 30px;
-    background-color: red;
+    background-color: rgb(7, 7, 41);
 }
 #enemy_health_decreasing {
     position: absolute; 
-    background-color: green; 
+    background-color: blueviolet; 
     top: 0; 
     bottom: 0; 
     right: 0; 
     left: 0;
-}
+} 
 
 #Tie{
     position: absolute;
