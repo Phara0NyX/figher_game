@@ -33,7 +33,7 @@ const background1 = new Sprite({
 
 const player = new Fighter({
     position: {
-        x: 400,
+        x: 100,
         y: 100
     },
     velocity: {
@@ -48,7 +48,7 @@ const player = new Fighter({
     framesMax: 8,
     scale: 2.5,
     offset: {
-        x: 570,
+        x: 150,
         y: 180,
     },
     sprites: {
@@ -79,8 +79,8 @@ const player = new Fighter({
     },
     attackBox: {
         offset: {
-            x: -260,
-            y: 25,
+            x: 160,
+            y: 10,
         },
         width: 160,
         height: 50
@@ -97,46 +97,46 @@ const enemy = new Fighter({
         y: 0
     },
     offset:{
-        x: -50,
+        x: 0,
         y: 0
     },
-    imageSrc: './Graphic/character/giocatore2/Idle.png',
-    framesMax: 4,
-    scale: 2.5,
+    imageSrc: './Graphic/character/NightBorne/Idle.png',
+    framesMax: 9,
+    scale: 3.5,
     offset: {
-        x: 410,
-        y: 195,
+        x: 100,
+        y: 93,
     },
     sprites: {
         idle: {
-            imageSrc: './Graphic/character/giocatore2/Idle.png',
-            framesMax: 4,
+            imageSrc: './Graphic/character/NightBorne/Idle.png',
+            framesMax: 9,
         },
         run: {
-            imageSrc: './Graphic/character/giocatore2/Run.png',
-            framesMax: 8,
+            imageSrc: './Graphic/character/NightBorne/Run.png',
+            framesMax: 6,
             image: new Image()
         },
         jump: {
-            imageSrc: './Graphic/character/giocatore2/Jump.png',
+            imageSrc: './Graphic/character/NightBorne/Jump.png',
             framesMax: 2,
             image: new Image()
         },
         fall: {
-            imageSrc: './Graphic/character/giocatore2/Fall.png',
+            imageSrc: './Graphic/character/NightBorne/Fall.png',
             framesMax: 2,
             image: new Image()
         },
         attack1: {
-            imageSrc: './Graphic/character/giocatore2/Attack1.png',
-            framesMax: 4,
+            imageSrc: './Graphic/character/NightBorne/Attack1.png',
+            framesMax: 6,
             image: new Image()
         },
     },
     attackBox: {
         offset: {
-            x: -320,
-            y: 25,
+            x: -160,
+            y: 10,
         },
         width: 160,
         height: 50

@@ -92,12 +92,13 @@ class Fighter extends Sprite {
     update () {
         this.draw()
         this.animateFrames()
+        console.log(player.position.x, player.position.y, enemy.attackBox.position.x,enemy.attackBox.position.y)
 
 
         //attackbox
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x
         this.attackBox.position.y = this.position.y + this.attackBox.offset.y
-        c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
+        
 
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y
@@ -151,13 +152,6 @@ class Fighter extends Sprite {
                 if(this.image !== this.sprites.attack1.image) {
                 this.image = this.sprites.attack1.image
                 this.framesMax = this.sprites.attack1.framesMax
-                this.framesCurrent = 0
-                }
-                break
-            case 'attack2':
-                if(this.image !== this.sprites.attack2.image) {
-                this.image = this.sprites.attack2.image
-                this.framesMax = this.sprites.attack2.framesMax
                 this.framesCurrent = 0
                 }
                 break

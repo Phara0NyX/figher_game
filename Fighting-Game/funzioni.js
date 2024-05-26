@@ -72,10 +72,11 @@ function animate () {
         enemy.switchSprite('idle')
     }
 
-    if(enemy.velocity.y < 0){
-        enemy.switchSprite('jump')
-    }else if (enemy.velocity.y > 0){
-        enemy.switchSprite('fall')
+
+    if(player.velocity.y < 0){
+        player.switchSprite('jump')
+    }else if (player.velocity.y > 0){
+        player.switchSprite('fall')
     }
 
 //detect collisions
@@ -84,7 +85,7 @@ function animate () {
             rectangle1: player,
             rectangle2: enemy
         }) &&
-        player.isAttacking && player.framesCurrent === 4
+        player.isAttacking===true && player.framesCurrent === 4
     ) {
         player.isAttacking = false
         enemy.health -= 20
@@ -96,22 +97,26 @@ function animate () {
 if(player.isAttacking && player.framesElapsed.Current === 4){
     player.isAttacking = false
 }
-
+// enemy  attack
     if (
         rectangularCollision({
             rectangle1: enemy,
             rectangle2: player
         }) &&
-        enemy.isAttacking && enemy.framesCurrent ===4
+        enemy.isAttacking===true && enemy.framesCurrent === 2
     ) {
         enemy.isAttacking = false
-        player.health -= 20
+        player.health -= 25
         document.querySelector('#player_health_decreasing').style.width= player.health + '%'
     }
     // end game based on health
     if (enemy.health <= 0 || player.health <= 0) {
         determineWinner({player, enemy, timerId})
     }
+    //enemy miss
+if(enemy.isAttacking && enemy.framesElapsed.Current === 4){
+        enemy.isAttacking = false
+}
 }
 
 animate()
