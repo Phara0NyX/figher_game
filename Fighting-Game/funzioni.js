@@ -11,11 +11,11 @@ function determineWinner({player,enemy, timerId}) {
     clearTimeout(timerId)
     document.querySelector('#tie').style.display = 'flex'
     if (player.health === enemy.health){
-        document.querySelector('#tie').innerHTML = 'Tie'
+        document.querySelector('#tie').innerHTML = 'Pareggio'
     } else if(player.health > enemy.health){
-        document.querySelector('#tie').innerHTML = 'Player 1 Win'
+        document.querySelector('#tie').innerHTML = 'Giocatore 1 Vince'
     } else if(player.health < enemy.health){
-        document.querySelector('#tie').innerHTML = 'Player 2 Win'
+        document.querySelector('#tie').innerHTML = 'Giocatore 2 Vince'
     }
 }
 
@@ -34,8 +34,8 @@ function decreaseTimer(){
 
 function animate () {
     window. requestAnimationFrame(animate)
-    c.fillStyle = 'black'
-    c.fillRect(0,0, canvas.width, canvas.height)
+//    c.fillStyle = 'black'
+//    c.fillRect(0,0, canvas.width, canvas.height)
     background1.update()
     player.update()
     enemy.update()
@@ -44,6 +44,9 @@ function animate () {
     enemy.velocity.x= 0
 
     //player
+// visto che il movimento basato su condizioni di vero e falso blocccava il personaggio in caso di pressione di 2 tasti contemporaneamente
+// abbiamo optato per una variabile contenente l'ultimo tasto schiacciato a cui viene data la priorita'
+
     if (keys.a.pressed && player.lastKey === 'a') {
         player.velocity.x = -3
         player.switchSprite('run')
@@ -61,7 +64,7 @@ function animate () {
     }
 
 
-     //enemy
+     //nemico
      if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
         enemy.velocity.x = -3
         enemy.switchSprite('run')
@@ -79,7 +82,8 @@ function animate () {
         player.switchSprite('fall')
     }
 
-//detect collisions
+//definisci contatto
+    // attacco giocatore
     if (
         rectangularCollision({
             rectangle1: player,
@@ -94,11 +98,11 @@ function animate () {
         
     }
 
-// if player misses
-if(player.isAttacking && player.framesElapsed.Current === 4){
+// se il player sbaglia
+if(player.isAttacking && player.framesElapsed.Current === 2){
     player.isAttacking = false
 }
-// enemy  attack
+// attacco nemico
     if (
         rectangularCollision({
             rectangle1: enemy,
@@ -111,12 +115,12 @@ if(player.isAttacking && player.framesElapsed.Current === 4){
         
         document.querySelector('#player_health_decreasing').style.width= player.health + '%'
     }
-    // end game based on health
+// in caso il timer scada
     if (enemy.health <= 0 || player.health <= 0) {
         determineWinner({player, enemy, timerId})
     }
-    //enemy miss
-if(enemy.isAttacking && enemy.framesElapsed.Current === 4){
+    // se il nemico sbaglia
+if(enemy.isAttacking && enemy.framesElapsed.Current === 2){
         enemy.isAttacking = false
 }
 }

@@ -14,6 +14,8 @@ class Sprite {
     }
     draw () {
         c.drawImage(
+//visto che gli sprite presentano molto spazio vuoto e la figura principale si trova al centro, abbiamo utilizzato un offset per spostare
+//la rappresetazione dell'immagine in un punto piu' facile da tenere d'occhio per le hitbox di armi e di giocatori
             this.image, 
             this.framesCurrent * (this.image.width / this.framesMax),
             0,
@@ -84,7 +86,7 @@ class Fighter extends Sprite {
         this.framesHold = 20
         this.sprites = sprites
         this.dead = false
-
+// qui prendo ogni animazione all'interno dell'oggetto sprites che riutilizzero' dopo
         for( const sprite in this.sprites){
             sprites [sprite].image = new Image()
             sprites [sprite].image.src = sprites [sprite].imageSrc
@@ -158,7 +160,6 @@ class Fighter extends Sprite {
                     this.framesMax = this.sprites.run.framesMax
                     this.framesCurrent = 0
                 }
-                
                 break
             case 'jump':
                 if(this.image !== this.sprites.jump.image) {

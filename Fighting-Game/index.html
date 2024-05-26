@@ -1,5 +1,6 @@
 <html>
 <head>
+<!-- qui ho importato un font da google, per farlo ho usato il metodo di collegamento di una pagina su internet-->
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -7,17 +8,20 @@
     <style>
         *{
            box-sizing: border-box;
-            font-family: 'Press Start 2P', cursive;
+            font-family: 'Press Start 2P';
         }
     </style>
 </head>
 <body>
     
-
+    <audio controls loop onload="loop()">
+        <source src="SoundTrack.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     
     <div id="overlay">
         <div id="health_and_timer">
-            <!-- player health-->
+            <!-- vita giocatore-->
             <div style="position: relative; 
             width: 100%; 
             display: flex; 
@@ -33,7 +37,7 @@
             <div id="timer">
                 60
             </div>
-            <!-- enemy health-->
+            <!-- vita nemico-->
             <div style="position: relative; 
             width: 100%;
             border-top: 4px solid white;
@@ -49,6 +53,5 @@
     <script src="classi.js"></script>
     <script src="funzioni.js"></script>
     <script src="script.js"></script>
-    
 </body>
 </html>

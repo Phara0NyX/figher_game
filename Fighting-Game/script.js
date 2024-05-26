@@ -1,6 +1,10 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
+//canvas possiamo considerarlo un greeenscreen il quale in un gioco molto movimentato mi aiuta a rendere piu' facile la rappresentazione grafica degli Sprites
+//e mi permette di rendere piu' fluide le animazioni
+
+
 canvas.width = 1024
 canvas.height = 576
 
@@ -13,23 +17,8 @@ const background1 = new Sprite({
         x: 0,
         y: -400
     },
-//    imageSrc: './Graphic/background/background_layer_1.png'
     imageSrc: './Graphic/sfondo1.png'
 })
-//const background2 = new Sprite({
-//    position: {
-//        x: 0,
-//        y: 0
-//    },
-//    imageSrc: './Graphic/background/background_layer_2.png'
-//})
-//const background3 = new Sprite({
-//    position: {
-//        x: 0,
-//        y: 0
-//   },
-//    imageSrc: './Graphic/background/background_layer_3.png'
-//})
 
 const player = new Fighter({
     position: {
@@ -51,6 +40,8 @@ const player = new Fighter({
         x: 255,
         y: 190,
     },
+// per facilitare la scelta delle immagini creo un oggetto che contiene al suo interno ogni animazione con ognuna il suo numero di frame, 
+//    questo mi aiuta a sceglere il movimento di cui ho bisogno grazie a una proprieta' di scelta all'interno della classe che crea il personaggio
     sprites: {
         idle: {
             imageSrc: './Graphic/character/Assassin/Idle.png',
