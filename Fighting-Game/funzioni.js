@@ -87,8 +87,9 @@ function animate () {
         }) &&
         player.isAttacking===true && player.framesCurrent === 2
     ) {
+        enemy.hit()
         player.isAttacking = false
-        enemy.health -= 20
+        
         document.querySelector('#enemy_health_decreasing').style.width= enemy.health + '%'
         
     }
@@ -105,8 +106,9 @@ if(player.isAttacking && player.framesElapsed.Current === 4){
         }) &&
         enemy.isAttacking===true && enemy.framesCurrent === 2
     ) {
+        player.hit()
         enemy.isAttacking = false
-        player.health -= 25
+        
         document.querySelector('#player_health_decreasing').style.width= player.health + '%'
     }
     // end game based on health

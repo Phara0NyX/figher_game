@@ -76,6 +76,11 @@ const player = new Fighter({
             framesMax: 5,
             image: new Image()
         },
+        hit: {
+            imageSrc: './Graphic/character/Assassin/Hit.png',
+            framesMax: 6,
+            image: new Image()
+        },
     },
     attackBox: {
         offset: {
@@ -130,6 +135,11 @@ const enemy = new Fighter({
         attack1: {
             imageSrc: './Graphic/character/NightBorne/Attack1.png',
             framesMax: 6,
+            image: new Image()
+        },
+        hit: {
+            imageSrc: './Graphic/character/NightBorne/Hit.png',
+            framesMax: 5,
             image: new Image()
         },
     },
