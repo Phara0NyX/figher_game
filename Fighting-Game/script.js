@@ -44,42 +44,42 @@ const player = new Fighter({
         x: 0,
         y: 0
     },
-    imageSrc: './Graphic/character/giocatore1/Idle.png',
+    imageSrc: './Graphic/character/Assassin/Idle.png',
     framesMax: 8,
     scale: 2.5,
     offset: {
-        x: 150,
-        y: 180,
+        x: 255,
+        y: 190,
     },
     sprites: {
         idle: {
-            imageSrc: './Graphic/character/giocatore1/Idle.png',
+            imageSrc: './Graphic/character/Assassin/Idle.png',
             framesMax: 8,
         },
         run: {
-            imageSrc: './Graphic/character/giocatore1/Run.png',
-            framesMax: 8,
+            imageSrc: './Graphic/character/Assassin/Run.png',
+            framesMax: 3,
             image: new Image()
         },
         jump: {
-            imageSrc: './Graphic/character/giocatore1/Jump.png',
-            framesMax: 2,
+            imageSrc: './Graphic/character/Assassin/Jump.png',
+            framesMax: 3,
             image: new Image()
         },
         fall: {
-            imageSrc: './Graphic/character/giocatore1/Fall.png',
-            framesMax: 2,
+            imageSrc: './Graphic/character/Assassin/Fall.png',
+            framesMax: 3,
             image: new Image()
         },
         attack1: {
-            imageSrc: './Graphic/character/giocatore1/Attack1.png',
-            framesMax: 6,
+            imageSrc: './Graphic/character/Assassin/Attack1.png',
+            framesMax: 5,
             image: new Image()
         },
     },
     attackBox: {
         offset: {
-            x: 160,
+            x: 75,
             y: 10,
         },
         width: 160,

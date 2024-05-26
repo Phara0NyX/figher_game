@@ -85,7 +85,7 @@ function animate () {
             rectangle1: player,
             rectangle2: enemy
         }) &&
-        player.isAttacking===true && player.framesCurrent === 4
+        player.isAttacking===true && player.framesCurrent === 2
     ) {
         player.isAttacking = false
         enemy.health -= 20
