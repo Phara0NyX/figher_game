@@ -97,8 +97,14 @@ class Fighter extends Sprite {
         this.draw()
         if(!this.dead) this.animateFrames()
         
+        
 
-
+        if(this.position.x <= -35 ){
+            this.position.x = -34
+        }
+        if(this.position.x >= 901){
+            this.position.x = 900
+        }
 
         //attackbox
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x
@@ -132,7 +138,7 @@ class Fighter extends Sprite {
         if (this.image === this.sprites.death.image) {
             if(this.framesCurrent === this.sprites.death.framesMax -1 )
             this.dead = true
-            return
+            return 
         }
                
 

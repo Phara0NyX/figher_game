@@ -39,6 +39,7 @@ function animate () {
     background1.update()
     player.update()
     enemy.update()
+    console.log(player.position.x, player.position.y, enemy.position.x, enemy.position.y)
 
     player.velocity.x= 0
     enemy.velocity.x= 0
